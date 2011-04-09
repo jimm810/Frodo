@@ -1,4 +1,15 @@
 Frodo::Application.routes.draw do
+  
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/home',    :to => 'pages#home'
+
+  resources :contract_details
+
+  resources :contracts
+
+  resources :customers
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
@@ -10,6 +21,10 @@ Frodo::Application.routes.draw do
   resources :sessions
 
   resources :users
+  
+  root :to => 'pages#home'
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

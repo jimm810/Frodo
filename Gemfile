@@ -1,12 +1,24 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'mysql'
+gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'will_paginate', '3.0.pre2'
+gem 'faker', '0.3.1'
+gem 'simple_form'
+
+group :development do
+  gem 'rspec-rails', '2.5.0'
+  gem 'annotate-models','1.0.4'
+  gem 'faker', '0.3.1'
+  gem "nifty-generators"
+end
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby',  :require => 'sqlite3'
-gem "nifty-generators", :group=>:development
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -31,4 +43,4 @@ gem "nifty-generators", :group=>:development
 #   gem 'webrat'
 # end
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "mocha", :group => :test
+gem "mocha", :group => :development

@@ -1,0 +1,35 @@
+one:
+  contract_id: 1
+  name: MyString
+  type: MyString
+  note: MyText
+  revenue: 1.5
+  hours: 1.5
+  hours_used: 1.5
+  rate: 1.5
+  fixed_price: false
+  phase_id: 1
+  state_id: 1
+  status_id: 1
+  assigned_to: MyString
+  assign_date: 2011-04-09
+  commit_date: 2011-04-09
+  request_date: 2011-04-09
+
+two:
+  contract_id: 1
+  name: MyString
+  type: MyString
+  note: MyText
+  revenue: 1.5
+  hours: 1.5
+  hours_used: 1.5
+  rate: 1.5
+  fixed_price: false
+  phase_id: 1
+  state_id: 1
+  status_id: 1
+  assigned_to: MyString
+  assign_date: 2011-04-09
+  commit_date: 2011-04-09
+  request_date: 2011-04-09
