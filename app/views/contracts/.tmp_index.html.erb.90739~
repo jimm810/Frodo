@@ -13,7 +13,7 @@
     <tr>
       <td><%= contract.id %></td>	
 	  <td><%= link_to contract.name,contract_details_path %></td>
-      <td><%= contract.contract_type %></td>
+      <td><%= contract.type %></td>
       <td><%= contract.execution_date %></td>
       <td><%= contract.customer.name %></td>
       <td><%= contract.active %></td>

@@ -2,7 +2,7 @@ class CreateContracts < ActiveRecord::Migration
   def self.up
     create_table :contracts do |t|
       t.string :name
-      t.integer :type
+      t.integer :contract_type
       t.date :execution_date
       t.integer :customer_id
       t.boolean :active

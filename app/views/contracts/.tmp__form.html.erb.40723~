@@ -1,7 +1,7 @@
 <%= simple_form_for @contract do |f| %>
   <%= f.error_messages %>
   <%= f.input :name%>
-  <%= f.input :contract_type%>
+  <%= f.input :type%>
   <%= f.input :execution_date%>
   <%= f.association :customer, :collection => Customer.all(:order => 'name'), :prompt => "Choose a Customer" %>
   <%= f.input :active%>

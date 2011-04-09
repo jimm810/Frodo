@@ -7,7 +7,7 @@
 </p>
 <p>
   <strong>Type:</strong>
-  <%= @contract.contract_type %>
+  <%= @contract.type %>
 </p>
 <p>
   <strong>Execution Date:</strong>
