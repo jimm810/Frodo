@@ -10,7 +10,7 @@
     <th>Active</th>
   </tr>
   <% for contract in @contracts %>
-    <tr> 
+    <tr>
       <td><%= contract.id %></td>	
 	  <td><%= link_to contract.name,contract_details_path %></td>
       <td><%= contract.contract_type %></td>
