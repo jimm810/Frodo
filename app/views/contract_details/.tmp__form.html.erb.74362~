@@ -1,0 +1,21 @@
+<%= simple_form_for @contract_detail do |f| %>
+  <%= f.error_messages %>
+  <%= f.association :contract, :collection => Contract.all(:order => 'name'), :prompt => "Choose a Contract" %>
+  <%= f.input :name%>
+  <%= f.input :detail_type%>
+  <%= f.input :note%>
+  <%= f.input :revenue%>
+  <%= f.input :hours%>
+  <%= f.input :rate%>
+  <%= f.input :hours_used%>
+  <%= f.input :fixed_price%>
+  <%= f.input :phase_id%>
+  <%= f.input :status_id%>
+  <%= f.input :state_id%>
+  <%= f.input :assigned_to%>
+  <%= f.input :assign_date%>
+  <%= f.input :request_date%>
+  <%= f.input :commit_date%>
+  <%= f.button :submit%>
+<% end %>
+   
