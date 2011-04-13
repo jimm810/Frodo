@@ -1,5 +1,7 @@
 Frodo::Application.routes.draw do
   
+  resources :statuses
+
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/home',    :to => 'pages#home'

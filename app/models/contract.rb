@@ -3,5 +3,6 @@ class Contract < ActiveRecord::Base
      
   belongs_to :customer
   has_many :contract_details
+  belongs_to :status
   
 end
