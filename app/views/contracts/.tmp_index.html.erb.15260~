@@ -2,20 +2,21 @@
 <h3> Contracts </h3>
 <table>
   <tr>
-    <th>ID#</th>
+    <th>Customer</th>
+	<th>Contract#</th>
 	<th>Name</th>
     <th>Type</th>
     <th>Execution Date</th>
-    <th>Customer</th>
+  
     <th>Active</th>
   </tr>
   <% for contract in @contracts %>
     <tr> 
-      <td><%= contract.id %></td>	
-	  <td><%= link_to contract.name,contract_details_path %></td>
+      <td><%= contract.customer.name %></td>
+	  <td><%= contract.id %></td>	
+	  <td><%= link_to contract.name,contract_details_path(contract) %></td>
       <td><%= contract.contract_type.name unless contract.contract_type.nil? %></td>
       <td><%= contract.execution_date %></td>
-      <td><%= contract.customer.name %></td>
       <td><%= contract.active %></td>
       <td><%= link_to "Show", contract %></td>
       <td><%= link_to "Edit", edit_contract_path(contract) %></td>

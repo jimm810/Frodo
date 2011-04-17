@@ -13,6 +13,7 @@ Frodo::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/home',    :to => 'pages#home'
+  match '/admin',   :to => 'pages#admin'
 
   resources :contract_details
 
