@@ -1,0 +1,34 @@
+<% title "Contract Details" %>
+
+<table>
+  <tr>
+    <th>Contract</th>
+    <th>Category</th>
+    <th>Revenue</th>
+    <th>Hours</th>
+    <th>Hours Used</th>
+    <th>Phase</th>
+    <th>State</th>
+    <th>Status</th>
+    <th>Assigned To</th>
+
+  </tr>
+  <% for contract_detail in @contract_details %>
+    <tr>
+      <td><%= contract_detail.contract_id %></td>
+      <td><%= contract_detail.category.name %></td>
+      <td><%= contract_detail.revenue %></td>
+      <td><%= contract_detail.hours %></td>
+      <td><%= contract_detail.hours_used %></td>
+      <td><%= contract_detail.phase.name %></td>
+      <td><%= contract_detail.state.name %></td>
+      <td><%= contract_detail.status.name %></td>
+      <td><%= contract_detail.assigned_to %></td>
+      <td><%= link_to "Show", contract_detail %></td>
+      <td><%= link_to "Edit", edit_contract_detail_path(contract_detail) %></td>
+      <td><%= link_to "Delete", contract_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Contract Detail", new_contract_detail_path %></p>

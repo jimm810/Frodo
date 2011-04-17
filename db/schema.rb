@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413003212) do
+ActiveRecord::Schema.define(:version => 20110416011005) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contract_details", :force => true do |t|
     t.integer  "contract_id"
@@ -29,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20110413003212) do
     t.date     "assign_date"
     t.date     "commit_date"
     t.date     "request_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  create_table "contract_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20110413003212) do
 
   create_table "contracts", :force => true do |t|
     t.string   "name"
-    t.integer  "contract_type"
+    t.integer  "contract_type_id"
     t.date     "execution_date"
     t.integer  "customer_id"
     t.boolean  "active"
@@ -77,6 +92,20 @@ ActiveRecord::Schema.define(:version => 20110413003212) do
     t.boolean  "active"
     t.string   "phone"
     t.string   "mobile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "phases", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

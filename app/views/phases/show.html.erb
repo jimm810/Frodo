@@ -1,0 +1,16 @@
+<% title "Phase" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @phase.name %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @phase.active %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_phase_path(@phase) %> |
+  <%= link_to "Destroy", @phase, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", phases_path %>
+</p>

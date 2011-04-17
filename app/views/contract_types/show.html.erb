@@ -1,0 +1,16 @@
+<% title "Contract Type" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contract_type.name %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @contract_type.active %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_contract_type_path(@contract_type) %> |
+  <%= link_to "Destroy", @contract_type, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", contract_types_path %>
+</p>

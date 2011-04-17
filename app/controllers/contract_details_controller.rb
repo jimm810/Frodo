@@ -1,7 +1,12 @@
 class ContractDetailsController < ApplicationController
   def index
-    @contract_details = ContractDetail.all
+    if params[:format].nil?
+      @contract_details = ContractDetail.all
+    else
+      @contract_details = ContractDetail.where(:contract_id => params[:format]) 
+    end  
   end
+
 
   def show
     @contract_detail = ContractDetail.find(params[:id])

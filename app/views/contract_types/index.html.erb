@@ -1,0 +1,19 @@
+<% title "Contract Types" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+  </tr>
+  <% for contract_type in @contract_types %>
+    <tr>
+      <td><%= contract_type.name %></td>
+      <td><%= contract_type.active %></td>
+      <td><%= link_to "Show", contract_type %></td>
+      <td><%= link_to "Edit", edit_contract_type_path(contract_type) %></td>
+      <td><%= link_to "Destroy", contract_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Contract Type", new_contract_type_path %></p>

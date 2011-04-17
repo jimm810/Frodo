@@ -1,0 +1,19 @@
+<% title "States" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+  </tr>
+  <% for state in @states %>
+    <tr>
+      <td><%= state.name %></td>
+      <td><%= state.active %></td>
+      <td><%= link_to "Show", state %></td>
+      <td><%= link_to "Edit", edit_state_path(state) %></td>
+      <td><%= link_to "Destroy", state, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New State", new_state_path %></p>

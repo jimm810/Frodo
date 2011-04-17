@@ -1,5 +1,13 @@
 Frodo::Application.routes.draw do
   
+  resources :categories
+
+  resources :contract_types
+
+  resources :phases
+
+  resources :states
+
   resources :statuses
 
   match '/contact', :to => 'pages#contact'

@@ -3,11 +3,10 @@
 <table>
   <tr>
     <th>Contract</th>
-    <th>Type</th>
+    <th>Category</th>
     <th>Revenue</th>
     <th>Hours</th>
     <th>Hours Used</th>
-    <th>Phase</th>
     <th>State</th>
     <th>Status</th>
     <th>Assigned To</th>
@@ -16,13 +15,12 @@
   <% for contract_detail in @contract_details %>
     <tr>
       <td><%= contract_detail.contract_id %></td>
-      <td><%= contract_detail.detail_type %></td>
+      <td><%= contract_detail.category.name %></td>
       <td><%= contract_detail.revenue %></td>
       <td><%= contract_detail.hours %></td>
       <td><%= contract_detail.hours_used %></td>
-      <td><%= contract_detail.phase_id %></td>
-      <td><%= contract_detail.state_id %></td>
-      <td><%= contract_detail.status_id %></td>
+      <td><%= contract_detail.state.name unless contract_detail.state.nil? %></td>
+      <td><%= contract_detail.status.name unless contract_detail.status.nil? %></td>
       <td><%= contract_detail.assigned_to %></td>
       <td><%= link_to "Show", contract_detail %></td>
       <td><%= link_to "Edit", edit_contract_detail_path(contract_detail) %></td>
