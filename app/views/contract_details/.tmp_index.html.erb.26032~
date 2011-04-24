@@ -75,5 +75,6 @@
   </table>
 </fieldset>  
 
-<p><%= link_to "Add new detail row",new_details_path(@contract.id) %></p>
+<p><%= link_to "New Contract Detail", new_contract_detail_path %></p>
+<p><%= link_to "Add new row",new_details_path(@contract.id) %></p>
 

@@ -1,10 +1,10 @@
 class ContractsController < ApplicationController
   
   def index
-    if params[:format].nil?
-      @contracts = Contract.all
+    if params[:customer_id]
+      @contracts = Contract.where(:customer_id => params[:customer_id]) 
     else
-      @contracts = Contract.where(:customer_id => params[:format]) 
+      @contracts = Contract.all
     end  
   end
 

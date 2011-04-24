@@ -1,0 +1,17 @@
+4/23/2011
+
+I modified the contracts_detail index form quite a bit.  I added customer and contract
+header information and used the form styles from blueprint.css to add the fieldset tags to
+the form to improve the look.  I also used the col-span attributes on the <nav></nav> tags
+to line data up better.
+
+I also added column totals to the detail lines and removed extraneous data that is now in the headers.
+
+I added a new route so that adding a new row to the contract_details table passes the contract_id
+parameter to the controller.  I haven't finished changing the controller and testing the view.
+
+To do: pass a parameter to the create new detail method so that the contract_id is automatically
+       associated to a new detail record.  Remove the select box for contract from the form and
+	   replace it with a contract# and contract name static value.
+	   
+	   

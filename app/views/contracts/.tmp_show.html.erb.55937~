@@ -2,10 +2,6 @@
 
 <h1> Contract </h1>
 <p>
-  <strong>Customer:</strong>
-  <%= @contract.customer.name %>
-</p>
-<p>
   <strong>Name:</strong>
   <%= @contract.name %>
 </p>
@@ -14,12 +10,12 @@
   <%= @contract.contract_type.name %> 
 </p>
 <p>
-  <strong>Revenue:</strong>
-  <%= @contract.revenue %> 
-</p>
-<p>
   <strong>Execution Date:</strong>
   <%= @contract.execution_date %>
+</p>
+<p>
+  <strong>Customer:</strong>
+  <%= @contract.customer.name %>
 </p>
 
 <p>

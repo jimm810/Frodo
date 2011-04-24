@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110416011005) do
+ActiveRecord::Schema.define(:version => 20110423201121) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,32 +39,15 @@ ActiveRecord::Schema.define(:version => 20110416011005) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.date     "completion_date"
+    t.integer  "group_id"
+    t.boolean  "active"
+    t.boolean  "complete"
   end
 
   create_table "contract_types", :force => true do |t|
     t.string   "name"
     t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "contractdetails", :force => true do |t|
-    t.integer  "contract_id"
-    t.string   "name"
-    t.string   "type"
-    t.text     "note"
-    t.float    "revenue"
-    t.float    "hours"
-    t.float    "hours_used"
-    t.float    "rate"
-    t.boolean  "fixed_price"
-    t.integer  "phase_id"
-    t.integer  "state_id"
-    t.integer  "status_id"
-    t.string   "assigned_to"
-    t.date     "assign_date"
-    t.date     "commit_date"
-    t.date     "request_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20110416011005) do
     t.integer  "phase_id"
     t.integer  "state_id"
     t.integer  "status_id"
+    t.date     "required_date"
+    t.date     "close_date"
+    t.integer  "group_id"
+    t.integer  "owner_id"
+    t.string   "account_manager"
+    t.integer  "percent_complete"
+    t.float    "revenue"
   end
 
   create_table "customers", :force => true do |t|

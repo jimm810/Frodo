@@ -68,6 +68,5 @@
 <p>
   <%= link_to "Edit", edit_contract_detail_path(@contract_detail) %> |
   <%= link_to "Destroy", @contract_detail, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", customer_details_path(@contract_detail.contract.id) %>
-
+  <%= link_to "View All", contract_details_path %>
 </p>

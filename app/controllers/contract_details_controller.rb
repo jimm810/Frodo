@@ -1,9 +1,11 @@
 class ContractDetailsController < ApplicationController
   def index
-    if params[:format].nil?
-      @contract_details = ContractDetail.all
+    if params[:contract_id]
+      @contract_details = ContractDetail.where(:contract_id => params[:contract_id]) 
+      @contract = Contract.where(:id => params[:contract_id]).first
+      @customer = Customer.where(:id => @contract.customer_id)
     else
-      @contract_details = ContractDetail.where(:contract_id => params[:format]) 
+      @contract_details = ContractDetail.all
     end  
   end
 
@@ -13,6 +15,7 @@ class ContractDetailsController < ApplicationController
   end
 
   def new
+    # if params[:contract_id] then set the contract_id in the new contract detail to it
     @contract_detail = ContractDetail.new
   end
 

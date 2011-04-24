@@ -4,7 +4,6 @@
   <%= f.input :name%>
   <%= f.association :contract_type , :collection => ContractType.all(:order => 'name'), :prompt => "Choose a type" %>
   <p> </p> 
-  <%= f.input :revenue %>
   <%= f.input :execution_date%>
   <p> </p>
   <%= f.association :phase, :collection => Phase.all(:order => 'name'), :placeholder => 'Enter Phase'%>

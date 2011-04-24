@@ -42,7 +42,7 @@
   <legend>Details</legend>
   
   <table>  	
-
+    <th>Contract</th>
     <th>Category</th>
     <th>Revenue</th>
     <th>Hours</th>
@@ -54,7 +54,7 @@
     </tr>
     <% for contract_detail in @contract_details %>
       <tr>
-   
+      <td><%= contract_detail.contract_id %></td>
       <td><%= contract_detail.category.name %></td>
       <td><%= contract_detail.revenue %></td>
       <td><%= contract_detail.hours %></td>
@@ -67,13 +67,7 @@
       <td><%= link_to "Delete", contract_detail, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
-	<tr>
-		<th>Total:</th><th><%= @contract_details.sum(:revenue)%></th>
-		<th><%= @contract_details.sum(:hours)%></th>
-		<th><%= @contract_details.sum(:hours_used)%></th>
-	</tr>	
   </table>
 </fieldset>  
 
-<p><%= link_to "Add new detail row",new_details_path(@contract.id) %></p>
-
+<p><%= link_to "New Contract Detail", new_contract_detail_path %></p>

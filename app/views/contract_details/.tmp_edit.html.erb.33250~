@@ -1,0 +1,8 @@
+<% title "Edit Contract Detail" %>
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Show", @contract_detail %> |
+  <%= link_to "View All", contract_details_path %>
+</p>

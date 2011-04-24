@@ -1,38 +1,26 @@
 Frodo::Application.routes.draw do
   
-  resources :categories
-
-  resources :contract_types
-
-  resources :phases
-
-  resources :states
-
-  resources :statuses
+# routes for all of the code tables in the app
+  resources :phases, :states, :statuses, :categories, :contract_types
+  
+#routes for the main models in the app
+  
+  match 'customer_contracts/:customer_id' => 'Contracts#index', :as => 'customer_contracts'
+  match 'customer_details/:contract_id' => 'ContractDetails#index', :as => 'customer_details'
+  match 'customer_contract_details/:contract_id' =>'ContractDetails#new', :as => 'new_details'
+  resources :customers, :contracts, :contract_details
+  
+#routes for authentication
+  resources :sessions, :users
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/home',    :to => 'pages#home'
   match '/admin',   :to => 'pages#admin'
-
-  resources :contract_details
-
-  resources :contracts
-
-  resources :customers
-
   match 'user/edit' => 'users#edit', :as => :edit_current_user
-
   match 'signup' => 'users#new', :as => :signup
-
   match 'logout' => 'sessions#destroy', :as => :logout
-
   match 'login' => 'sessions#new', :as => :login
-
-  resources :sessions
-
-  resources :users
-  
   root :to => 'pages#home'
   
   
