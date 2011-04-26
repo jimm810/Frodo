@@ -15,7 +15,7 @@
 </p>
 <p>
   <strong>Revenue:</strong>
-  <%= number_to_currency(@contract.revenue) %> 
+  <%= @contract.revenue %> 
 </p>
 <p>
   <strong>Execution Date:</strong>

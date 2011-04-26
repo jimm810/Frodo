@@ -17,7 +17,7 @@
 	  <td><%= link_to contract.name,customer_details_path(contract.id) %></td>
       <td><%= contract.contract_type.name unless contract.contract_type.nil? %></td>
       <td><%= contract.execution_date %></td>
-	  <td><%= number_to_currency(contract.revenue) %></td>
+	  <td><%= contract.revenue %></td>
       <td><%= contract.active %></td>
       <td><%= link_to "Show", contract %></td>
       <td><%= link_to "Edit", edit_contract_path(contract) %></td>

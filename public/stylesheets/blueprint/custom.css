@@ -306,3 +306,5 @@ form.new_micropost textarea {
   display: block;
   font-style: italic;
 }
+
+.noshow {visibility: hidden;} 

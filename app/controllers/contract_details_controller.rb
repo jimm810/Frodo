@@ -16,7 +16,7 @@ class ContractDetailsController < ApplicationController
 
   def new
     # if params[:contract_id] then set the contract_id in the new contract detail to it
-    @contract_detail = ContractDetail.new
+    @contract_detail = ContractDetail.new(:contract_id => params[:contract_id])
   end
 
   def create

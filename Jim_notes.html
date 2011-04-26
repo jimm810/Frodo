@@ -1,3 +1,30 @@
+4/24/2011
+Sample code found on Stack Overflow that illustrates how to set the parent-child record creation:
+
+I'm assuming you have a journal model that has many articles and an article model that belongs
+ to a journal. First, you should create routes to the articles controller that go through journals
+  and not through journals:
+
+ActionController::Routing::Routes.draw do |map|
+  map.resources :journals, :has_many => :articles
+  map.resources :articles
+end
+
+Now you can get to the new action of your articles controller with the 
+URL /articles/new or /journals/1/articles/new. Then in the new action in your 
+articles controller, you do this:
+
+@article = Article.new(:journal_id => params[:journal_id])
+
+Which set the journal_id of the article to whatever parameter is passed in. 
+If no parameter is passed, the journal_id will be nil.
+
+In the ERB template, you just do this to create the drop down:
+
+<%= f.collection_select :journal_id, Journal.all(:order => "name"), 
+:id, :name, :include_blank => true %>
+
+
 4/23/2011
 
 I modified the contracts_detail index form quite a bit.  I added customer and contract

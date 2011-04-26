@@ -28,7 +28,7 @@
 	  <tr>
   	  <td><%= @contract.id %></td>
 	  <td><%= @contract.name %></td>
-	  <td><%= number_to_currency(@contract[:revenue]) %></td>
+	  <td><%= @contract[:revenue] %></td>
 	  <td><%= @contract.execution_date %></td>
 	
 	  </tr>
@@ -42,7 +42,7 @@
   <legend>Details</legend>
   
   <table>  	
-  
+
     <th>Category</th>
     <th>Revenue</th>
     <th>Hours</th>
@@ -53,12 +53,12 @@
 
     </tr>
     <% for contract_detail in @contract_details %>
-      <tr class="align-right">
+      <tr>
    
-      <td align="left"><%= contract_detail.category.name %></td>
-      <td  class="align-right"><%= number_to_currency(contract_detail.revenue)%></td>
-      <td  class="align-right"><%= contract_detail.hours %></td>
-      <td  class="align-right"><%= contract_detail.hours_used %></td>
+      <td><%= contract_detail.category.name %></td>
+      <td><%= contract_detail.revenue %></td>
+      <td><%= contract_detail.hours %></td>
+      <td><%= contract_detail.hours_used %></td>
       <td><%= contract_detail.state.name unless contract_detail.state.nil? %></td>
       <td><%= contract_detail.status.name unless contract_detail.status.nil? %></td>
       <td><%= contract_detail.assigned_to %></td>
@@ -68,9 +68,9 @@
       </tr>
     <% end %>
 	<tr>
-		<th>Total:</th><th ><%= number_to_currency(@contract_details.sum(:revenue))%></th>
-		<th ><%= @contract_details.sum(:hours)%></th>
-		<th ><%= @contract_details.sum(:hours_used)%></th>
+		<th>Total:</th><th><%= @contract_details.sum(:revenue)%></th>
+		<th><%= @contract_details.sum(:hours)%></th>
+		<th><%= @contract_details.sum(:hours_used)%></th>
 	</tr>	
   </table>
 </fieldset>  

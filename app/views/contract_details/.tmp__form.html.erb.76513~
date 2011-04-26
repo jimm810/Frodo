@@ -1,10 +1,8 @@
-
-<h3>Contract: <%=@contract_detail.contract.customer[:name] unless @contract_detail.contract.nil?  %> - <%=@contract_detail.contract[:name] unless @contract_detail.contract.nil? %></h3>
-
 <%= simple_form_for @contract_detail do |f| %>
   <%= f.error_messages %>
-  <%= f.input :contract_id, :disabled=> false %>
-  <%= f.input :name, :label => 'Description'%>
+  <%= f.label params[:id]||params[:contract_id] %><br>
+  <%= f.association :contract, :collection => Contract.all(:order => 'name'), :prompt => "Choose a Contract" %>
+  <%= f.input :name%>
   <%= f.association :category, :collection => Category.all(:order => 'name') %>
   <%= f.input :note%>
   <%= f.input :revenue%>
