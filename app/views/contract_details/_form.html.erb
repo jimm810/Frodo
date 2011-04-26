@@ -3,7 +3,7 @@
 
 <%= simple_form_for @contract_detail do |f| %>
   <%= f.error_messages %>
-  <%= f.input :contract_id, :disabled=> false %>
+  <%= f.input :contract_id, :as=>:hidden  %>
   <%= f.input :name, :label => 'Description'%>
   <%= f.association :category, :collection => Category.all(:order => 'name') %>
   <%= f.input :note%>
