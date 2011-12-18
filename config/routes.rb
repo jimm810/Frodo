@@ -16,6 +16,7 @@ Frodo::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/home',    :to => 'pages#home'
+  match '/homeexec',    :to => 'pages#homeexec'
   match '/admin',   :to => 'pages#admin'
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   match 'signup' => 'users#new', :as => :signup
