@@ -1,5 +1,0 @@
-<% title "New Contract Detail" %>
-<h3>New Contract Details</h3>
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", contract_details_path %></p>
